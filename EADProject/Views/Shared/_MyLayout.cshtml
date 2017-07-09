@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Music World</title>
+    <link rel="stylesheet" href=@Url.Content("/Content/css/style.css") type="text/css">
+</head>
+<body>
+    <div>
+
+        <div id="header">
+            <div class="header">
+                @{string url = HttpContext.Current.Request.Url.AbsoluteUri;}
+                <ul>
+                    @if (url.Contains("Index"))
+                    {
+                        <li class="selected">
+                            <a href=@Url.Content("~/Home/Index")>home</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href=@Url.Content("~/Home/Index")>home</a>
+                        </li>
+                    }
+
+                    @if (url.Contains("About"))
+                    {
+                        <li class="selected">
+                            <a href=@Url.Content("~/Home/About")>About</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href=@Url.Content("~/Home/About")>About</a>
+                        </li>
+                    }
+
+                    @if (url.Contains("Blog"))
+                    {
+                        <li class="selected">
+                            <a href=@Url.Content("~/Home/Blog")>Blog</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href=@Url.Content("~/Home/Blog")>Blog</a>
+                        </li>
+                    }
+
+                    @if (url.Contains("Songs"))
+                    {
+                        <li class="selected">
+                            <a href=@Url.Content("~/Home/Songs")>Songs</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href=@Url.Content("~/Home/Songs")>Songs</a>
+                        </li>
+                    }
+
+                </ul>
+                <img style="margin-top:-20px" src=@Url.Content("/Content/images/logo1.png") width="100" height="80" alt="" />
+                @if (Session["Login"] == null)
+                {
+                    <form action="/Home/Login">
+                        <button style="background-color: crimson; color: aliceblue; background-position:  -153px 0; cursor: pointer; margin: 0 0 0 15px; padding: 0; width: 85px; height: 30px" type="submit"><b>Login</button>
+                    </form>
+                }
+                else
+                {
+                    <form action="/Home/Logout">
+                        <button style="background-color: crimson; color: aliceblue; background-position:  -153px 0; cursor: pointer; margin: 0 0 0 15px; padding: 0; width: 85px; height: 30px" type="submit"><b>Logout</button>
+                    </form>
+                }
+
+
+
+            </div>
+            @RenderBody()
+            @*@RenderSection("part", required: false)*@
+        @*</div>*@
+        @*@RenderBody()*@
+
+
+    @*</div>*@
+
+
+
+    
+
+    <div id="footer">
+        <p>
+            &copy;Copyright 2016. <a href="index.html">GeniTeam</a> all rights reserved
+        </p>
+    </div>
+</body>
+</html>

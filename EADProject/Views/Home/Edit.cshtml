@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+    <br />
+<br />
+<br />
+
+    <form action="/Home/Edit2" method="post">
+        <input type="text" name="txtID" value="@ViewBag.id" hidden/> <br />
+        Song Name : &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="txtName" value="@ViewBag.name" /> <br />
+        <br />
+        Singer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="txtSinger" value="@ViewBag.singer" /> <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+
+</div>

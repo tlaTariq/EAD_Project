@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+
+<h2>Add</h2>
+<br />
+<br />
+<br />
+    <form action="/Home/Add2" method="post" enctype="multipart/form-data">
+        Song Name : &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="txtName" required /> <br />
+        <br />
+        Singer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="txtSinger" required /> <br />
+        <br />
+        <input type="file"  name="file" required /> <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+
+
+
+</div>
